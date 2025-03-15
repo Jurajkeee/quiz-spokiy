@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/quiz-spokiy/static/css/main.49abf597.css",
-    "main.js": "/quiz-spokiy/static/js/main.ffdfe0af.js",
+    "main.js": "/quiz-spokiy/static/js/main.0a37b80f.js",
     "static/js/453.ad6eb26e.chunk.js": "/quiz-spokiy/static/js/453.ad6eb26e.chunk.js",
     "index.html": "/quiz-spokiy/index.html",
     "main.49abf597.css.map": "/quiz-spokiy/static/css/main.49abf597.css.map",
-    "main.ffdfe0af.js.map": "/quiz-spokiy/static/js/main.ffdfe0af.js.map",
+    "main.0a37b80f.js.map": "/quiz-spokiy/static/js/main.0a37b80f.js.map",
     "453.ad6eb26e.chunk.js.map": "/quiz-spokiy/static/js/453.ad6eb26e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.49abf597.css",
-    "static/js/main.ffdfe0af.js"
+    "static/js/main.0a37b80f.js"
   ]
 }
