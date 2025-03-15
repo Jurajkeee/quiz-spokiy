@@ -44,7 +44,7 @@ const PsychologicalQuiz = () => {
       alternativeOptions: [
         { label: "Енергійний", icon: "⚡" },
         { label: "Втомлений", icon: "🔋" },
-        { label: "Виснажений", icon: "🌡️" }, 
+        { label: "Виснажений", icon: "🌡️" },
         { label: "Вигорання", icon: "🔥" }
       ],
       visualType: "energy"
@@ -96,7 +96,6 @@ const PsychologicalQuiz = () => {
   const calculateStressLevel = (): number => {
     let score = 0;
     const maxScore = questions.length * 3; // Максимальний можливий бал
-    // Використовуємо Object.entries для ітерації по answers
     Object.entries(answers).forEach(([_, value]) => {
       score += value;
     });
@@ -115,435 +114,141 @@ const PsychologicalQuiz = () => {
       {
         title: "Дихальні вправи",
         description: "Практикуйте глибоке дихання протягом 5 хвилин кілька разів на день.",
-        icon: <AlertCircle className="h-5 w-5 text-white" />
+        icon: <AlertCircle />
       },
       {
         title: "Ведення щоденника",
         description: "Записуйте свої думки та почуття, щоб краще розуміти свої емоції.",
-        icon: <Book className="h-5 w-5 text-white" />
+        icon: <Book />
       },
       {
         title: "Соціальна підтримка",
         description: "Не соромтеся звертатися за підтримкою до друзів або сім'ї.",
-        icon: <Users className="h-5 w-5 text-white" />
+        icon: <Users />
       }
     ];
   };
 
+  // Якщо це стартова сторінка (інтро)
   if (currentStep === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 p-4 flex flex-col">
-        {/* Blue header with title */}
-        <div className="max-w-md mx-auto w-full rounded-t-xl overflow-hidden">
-          <div className="bg-blue-500 p-6 text-center text-white">
-            <h1 className="text-3xl font-bold mb-6 leading-tight">
-              90% людей не помічають ознаки психологічної кризи. А ви?
-            </h1>
-            <div className="flex justify-center gap-8 mt-6 mb-2">
-              <div className="flex items-center">
-                <div className="bg-blue-400 bg-opacity-30 p-2 rounded-full mr-3">
-                  <AlertCircle className="h-5 w-5 text-white" />
-                </div>
-                <div className="text-left">
-                  <div className="font-bold text-xl">14,378</div>
-                  <div className="text-xs text-blue-100">Вже пройшли</div>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <div className="bg-blue-400 bg-opacity-30 p-2 rounded-full mr-3">
-                  <AlertCircle className="h-5 w-5 text-white" />
-                </div>
-                <div className="text-left">
-                  <div className="font-bold text-xl">58 сек</div>
-                  <div className="text-xs text-blue-100">Середній час</div>
-                </div>
-              </div>
-            </div>
+      <div className="container">
+        <div className="card">
+          <div className="header">
+            <h1>90% людей не помічають ознаки психологічної кризи. А ви?</h1>
           </div>
-        </div>
-        {/* White content area */}
-        <div className="max-w-md mx-auto w-full bg-white rounded-b-xl shadow-lg p-6 flex flex-col">
-          <button 
-            onClick={() => setCurrentStep(1)}
-            className="w-full py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg shadow-md transition-colors flex items-center justify-center text-lg uppercase mb-4"
-          >
-            Почати тест
-            <ChevronRight className="ml-2 h-5 w-5" />
-          </button>
-          <div className="bg-blue-50 py-2 px-3 rounded-md text-center mb-6">
-            <p className="font-medium text-blue-700">
-              Тест займе не більше 1 хвилини.
-            </p>
-          </div>
-          <div className="border-l-4 border-blue-500 pl-4 py-2 mb-5">
-            <p className="text-gray-700">
-              <span className="text-red-500 font-bold">⚠️ Увага!</span> Стрес і тривога стали настільки звичними, що ми перестали їх помічати. Але наслідки можуть бути <span className="text-red-500 font-medium">серйозними і незворотними</span>, якщо вчасно не виявити проблему.
-            </p>
-          </div>
-          <div className="space-y-4 mb-4">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 text-gray-500 mr-2 mt-1">⏱️</div>
-              <p className="text-gray-700">
-                <span className="font-medium">Лише 5 простих запитань</span> допоможуть визначити ваш ризик психологічної кризи та отримати персоналізований план дій для покращення вашого стану.
-              </p>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 text-green-500 mr-2 mt-1">✅</div>
-              <p className="text-gray-700">
-                <span className="font-medium">Тест пройшли вже <span className="text-blue-500">14,378</span></span> українців і отримали рекомендації щодо покращення свого психологічного здоров'я!
-              </p>
-            </div>
-          </div>
-          <div className="mt-4 flex justify-center">
-            <div className="flex items-center text-xs text-gray-500">
-              <CheckCircle className="h-4 w-4 text-green-500 mr-1" />
-              <span>Безкоштовно</span>
-              <span className="mx-2">•</span>
-              <CheckCircle className="h-4 w-4 text-green-500 mr-1" />
-              <span>Конфіденційно</span>
-            </div>
+          <div className="content">
+            <button className="btn-primary" onClick={() => setCurrentStep(1)}>
+              Почати тест <ChevronRight />
+            </button>
           </div>
         </div>
       </div>
     );
   }
 
+  // Якщо показується питання
   const currentQuestion = questions[currentStep - 1];
-
   const renderQuestionContent = () => {
-    if (currentQuestion.visualType === 'energy') {
-      return (
-        <>
-          <div className="mb-6 flex justify-center flex-wrap gap-4">
-            {currentQuestion.alternativeOptions?.map((option, index) => (
-              <button
-                key={index}
-                onClick={() => handleOptionSelect(currentQuestion.id, index)}
-                className={`relative flex flex-col items-center p-3 rounded-lg border transition-all ${
-                  answers[currentQuestion.id] === index
-                    ? 'border-blue-500 bg-blue-50'
-                    : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50'
-                }`}
-                style={{ width: 'calc(50% - 8px)' }}
-              >
-                <div className={`p-3 rounded-full mb-2 ${
-                  answers[currentQuestion.id] === index 
-                    ? 'bg-blue-100 text-blue-600' 
-                    : 'bg-gray-100 text-gray-600'
-                }`}>
-                  <span className="text-2xl">{option.icon}</span>
-                </div>
-                <span className="text-sm font-medium">{option.label}</span>
-                {answers[currentQuestion.id] === index && (
-                  <div className="absolute right-2 top-2 h-4 w-4 bg-blue-500 rounded-full"></div>
-                )}
-              </button>
-            ))}
-          </div>
-          <div className="border-t border-gray-200 pt-4 mt-2">
-            <p className="text-sm text-gray-500 mb-4">Або оберіть варіант нижче:</p>
-          </div>
-        </>
-      );
-    }
-
-    if (currentQuestion.visualType === 'emotional') {
-      const emotionColors = [
-        'bg-green-100 text-green-600',
-        'bg-blue-100 text-blue-600',
-        'bg-yellow-100 text-yellow-600',
-        'bg-red-100 text-red-600'
-      ];
-      return (
-        <div className="mb-6 grid grid-cols-2 gap-3">
+    return (
+      <div className="question-card">
+        <span className="question-number">{currentQuestion.id}</span>
+        <div className="question-text">{currentQuestion.text}</div>
+        <div>
           {currentQuestion.options.map((option, index) => (
-            <button
+            <div
               key={index}
+              className={`answer-option ${answers[currentQuestion.id] === index ? 'selected' : ''}`}
               onClick={() => handleOptionSelect(currentQuestion.id, index)}
-              className={`flex flex-col items-center p-4 rounded-lg border transition-all ${
-                answers[currentQuestion.id] === index
-                  ? 'border-blue-500 shadow-sm'
-                  : 'border-gray-200 hover:border-blue-300'
-              }`}
             >
-              <div className={`h-12 w-12 flex items-center justify-center rounded-full mb-2 ${
-                answers[currentQuestion.id] === index 
-                  ? 'bg-blue-500 text-white' 
-                  : emotionColors[index]
-              }`}>
-                <span className="text-2xl">{option.emoji}</span>
-              </div>
-              <span className="text-xs text-center">{option.text}</span>
-            </button>
+              <span className="answer-emoji">{option.emoji}</span>
+              <span>{option.text}</span>
+            </div>
           ))}
         </div>
-      );
-    }
-
-    return (
-      <div className="space-y-3 mb-6">
-        {currentQuestion.options.map((option, index) => (
-          <button
-            key={index}
-            onClick={() => handleOptionSelect(currentQuestion.id, index)}
-            className={`w-full py-3 px-4 rounded-lg border text-left transition-all ${
-              answers[currentQuestion.id] === index
-                ? 'border-blue-500 bg-blue-50'
-                : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50'
-            }`}
-          >
-            <div className="flex items-center">
-              <div className={`h-5 w-5 rounded-full border flex-shrink-0 flex items-center justify-center mr-3 ${
-                answers[currentQuestion.id] === index
-                  ? 'border-blue-500 bg-white'
-                  : 'border-gray-300'
-              }`}>
-                {answers[currentQuestion.id] === index && (
-                  <span className="h-3 w-3 bg-blue-500 rounded-full"></span>
-                )}
-              </div>
-              <div className="flex items-center">
-                <span className="mr-2 text-lg">{option.emoji}</span>
-                <span>{option.text}</span>
-              </div>
-            </div>
-            {answers[currentQuestion.id] === index && (
-              <div className="w-1 h-full bg-blue-500 absolute left-0 top-0 rounded-l-lg"></div>
-            )}
-          </button>
-        ))}
       </div>
     );
   };
 
+  // Якщо всі питання пройдені – сторінка з результатами
   if (currentStep > questions.length) {
     const stressLevel = calculateStressLevel();
     const stressLabel = getStressLevelLabel(stressLevel);
     const recommendations = getRecommendations();
-
     return (
-      <div className="min-h-screen bg-gray-50 p-4 flex flex-col">
-        <div className="max-w-md mx-auto w-full bg-white rounded-xl shadow-lg p-6 mb-4">
-          <div className="mb-6">
-            <h2 className="text-xl font-semibold text-blue-600 text-center mb-3">
-              Рівень вашого стресу
-            </h2>
-            <div className="relative h-3 bg-gray-200 rounded-full mb-2">
-              <div 
-                className="absolute left-0 top-0 h-3 rounded-full transition-all duration-500"
-                style={{ 
-                  width: `${stressLevel}%`,
-                  background: `linear-gradient(to right, rgb(74, 222, 128), rgb(234, 179, 8), rgb(244, 63, 94))`
-                }}
-              ></div>
-            </div>
-            <div className="flex justify-between text-xs text-gray-500 mb-4">
-              <span>Низький</span>
-              <span>Середній</span>
-              <span>Підвищений</span>
-              <span>Високий</span>
-            </div>
-            <p className="text-gray-700">
-              Ваш рівень стресу <span className="font-medium">{stressLabel.toLowerCase()}</span>. Рекомендуємо почати застосовувати техніки зниження стресу та покращення психологічного здоров'я.
-            </p>
+      <div className="container">
+        <div className="card">
+          <div className="header">
+            <h2>Ваш рівень стресу: {stressLabel}</h2>
           </div>
-          <div className="mb-6">
-            <h2 className="text-xl font-semibold text-blue-600 text-center mb-4">
-              Рекомендації для вас
-            </h2>
-            <div className="space-y-3">
-              {recommendations.map((rec, index) => (
-                <div key={index} className="bg-blue-50 p-4 rounded-lg flex">
-                  <div className="bg-blue-500 p-2 rounded-full mr-3 h-8 w-8 flex-shrink-0 flex items-center justify-center">
-                    {rec.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-blue-800">{rec.title}</h3>
-                    <p className="text-sm text-gray-600">{rec.description}</p>
-                  </div>
+          <div className="content">
+            <p>Ваш результат: {stressLevel}%</p>
+            <h2>Рекомендації для вас</h2>
+            {recommendations.map((rec, index) => (
+              <div key={index} className="recommendation-item">
+                <div className="recommendation-icon">{rec.icon}</div>
+                <div>
+                  <div className="recommendation-title">{rec.title}</div>
+                  <div className="recommendation-text">{rec.description}</div>
                 </div>
-              ))}
-            </div>
-          </div>
-          <div className="mb-6">
-            <h2 className="text-xl font-semibold text-blue-600 text-center mb-4">
-              Отримайте детальніший аналіз
-            </h2>
-            <div className="mb-4">
-              <div className="flex justify-center mb-2">
-                {[1, 2, 3, 4, 5].map(star => (
-                  <span key={star} className="text-yellow-400 text-xl">★</span>
-                ))}
               </div>
-              <p className="text-sm text-gray-500 text-center">
-                4.85 на основі 422 відгуків
-              </p>
-            </div>
-            <div className="space-y-2 mb-4">
-              <div className="flex items-start">
-                <input type="checkbox" checked readOnly className="mt-1 mr-2" />
-                <span className="text-sm">Повний психологічний аналіз вашого стану</span>
-              </div>
-              <div className="flex items-start">
-                <input type="checkbox" checked readOnly className="mt-1 mr-2" />
-                <span className="text-sm">7 персоналізованих рекомендацій від психолога</span>
-              </div>
-              <div className="flex items-start">
-                <input type="checkbox" checked readOnly className="mt-1 mr-2" />
-                <span className="text-sm">PDF-документ з практичними вправами</span>
-              </div>
-              <div className="flex items-start">
-                <input type="checkbox" checked readOnly className="mt-1 mr-2" />
-                <span className="text-sm">Бонус: 15-хвилинна аудіо-медитація</span>
-              </div>
-            </div>
-          </div>
-          {!submitted ? (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="mb-6 text-center">
-                <div className="h-16 w-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Send className="h-8 w-8 text-blue-600" />
-                </div>
-                <h2 className="text-xl font-semibold text-gray-800">
-                  Ваш результат майже готовий!
-                </h2>
-                <p className="text-gray-600 mt-2">
-                  Залиште свій e-mail, щоб отримати персоналізовану рекомендацію щодо поліпшення вашого стану від Spokiy AI просто зараз.
-                </p>
-              </div>
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Ваше ім'я
-                </label>
+            ))}
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label className="form-label" htmlFor="name">Ваше ім'я</label>
                 <input
                   type="text"
                   id="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="form-input"
                   placeholder="Введіть ваше ім'я"
                 />
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                  Ваш e-mail *
-                </label>
+              <div className="form-group">
+                <label className="form-label" htmlFor="email">Ваш e-mail *</label>
                 <input
                   type="email"
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="form-input"
                   placeholder="Введіть ваш email"
                 />
               </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                  Ваш телефон (за бажанням)
-                </label>
+              <div className="form-group">
+                <label className="form-label" htmlFor="phone">Ваш телефон (за бажанням)</label>
                 <input
                   type="tel"
                   id="phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="form-input"
                   placeholder="Введіть ваш телефон"
                 />
               </div>
-              <button
-                type="submit"
-                className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md transition-colors flex items-center justify-center"
-              >
-                Отримати мій результат
-                <ChevronRight className="ml-2 h-4 w-4" />
+              <button type="submit" className="btn-primary">
+                Отримати мій результат <ChevronRight />
               </button>
-              <div className="mt-3 flex justify-center">
-                <div className="flex items-center text-xs text-gray-500">
-                  <CheckCircle className="h-4 w-4 text-green-500 mr-1" />
-                  <span>Безкоштовно</span>
-                  <span className="mx-2">•</span>
-                  <CheckCircle className="h-4 w-4 text-green-500 mr-1" />
-                  <span>Конфіденційно</span>
-                </div>
-              </div>
             </form>
-          ) : (
-            <div className="text-center py-8">
-              <div className="h-16 w-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <CheckCircle className="h-10 w-10 text-green-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Дякуємо!</h3>
-              <p className="text-gray-600">
-                Ваш результат та рекомендації надіслано на вказану електронну пошту.
-              </p>
-            </div>
-          )}
+          </div>
         </div>
       </div>
     );
   }
 
+  // Якщо показується сторінка питання з навігацією
   return (
-    <div className="min-h-screen bg-gray-50 p-4 flex flex-col">
-      <div className="max-w-md mx-auto w-full bg-white rounded-xl shadow-lg p-6 my-auto">
-        <div className="w-full bg-gray-200 rounded-full h-2 mb-6">
-          <div
-            className="bg-blue-500 h-2 rounded-full transition-all duration-500"
-            style={{ width: `${progressPercentage}%` }}
-          ></div>
-        </div>
-        <div className="bg-blue-50 rounded-lg p-4 mb-6 relative">
-          <div className="absolute -left-1 -top-1 w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
-            {currentStep}
-          </div>
-          <h2 className="text-lg font-medium text-gray-800 pl-6">
-            {currentQuestion.text}
-          </h2>
-        </div>
-        {renderQuestionContent()}
-        <div className="flex justify-between">
-          <button
-            onClick={() => setCurrentStep(Math.max(1, currentStep - 1))}
-            className="py-2 px-4 border border-gray-300 rounded-lg flex items-center text-gray-600 hover:bg-gray-50"
-          >
-            <ChevronLeft className="h-4 w-4 mr-1" />
-            НАЗАД
-          </button>
-          <button
-            onClick={() => setCurrentStep(currentStep + 1)}
-            className="py-2 px-4 bg-blue-500 text-white rounded-lg flex items-center hover:bg-blue-600"
-          >
-            ДАЛІ
-            <ChevronRight className="h-4 w-4 ml-1" />
-          </button>
-        </div>
-        <div className="mt-8">
-          <div className="flex justify-between items-center">
-            <p className="text-xs text-blue-600">
-              Питання {currentStep} з {questions.length}
-            </p>
-            <p className="text-xs text-blue-600">
-              {Math.round(progressPercentage)}% пройдено
-            </p>
-          </div>
-          <div className="mt-2 relative">
-            <div className="absolute left-0 right-0 top-1.5 h-0.5 bg-gray-200"></div>
-            <div 
-              className="absolute left-0 top-1.5 h-0.5 bg-blue-500 transition-all duration-500"
-              style={{ width: `${progressPercentage}%` }}
-            ></div>
-            <div className="relative flex justify-between">
-              {[...Array(questions.length)].map((_, i) => (
-                <div 
-                  key={i} 
-                  className={`h-3 w-3 rounded-full z-10 ${i < currentStep ? 'bg-blue-500' : 'bg-gray-300'}`}
-                  style={{ transition: 'background-color 0.3s ease' }}
-                ></div>
-              ))}
-            </div>
-          </div>
-        </div>
+    <div className="container">
+      {renderQuestionContent()}
+      <div className="flex" style={{ justifyContent: 'space-between' }}>
+        <button className="btn-secondary" onClick={() => setCurrentStep(Math.max(1, currentStep - 1))}>
+          НАЗАД <ChevronLeft />
+        </button>
+        <button className="btn-next" onClick={() => setCurrentStep(currentStep + 1)}>
+          ДАЛІ <ChevronRight />
+        </button>
       </div>
     </div>
   );
