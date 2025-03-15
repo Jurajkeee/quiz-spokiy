@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/my-react-app/static/css/main.e6c13ad2.css",
-    "main.js": "/my-react-app/static/js/main.74792c0b.js",
-    "static/js/453.ad6eb26e.chunk.js": "/my-react-app/static/js/453.ad6eb26e.chunk.js",
-    "index.html": "/my-react-app/index.html",
-    "main.e6c13ad2.css.map": "/my-react-app/static/css/main.e6c13ad2.css.map",
-    "main.74792c0b.js.map": "/my-react-app/static/js/main.74792c0b.js.map",
-    "453.ad6eb26e.chunk.js.map": "/my-react-app/static/js/453.ad6eb26e.chunk.js.map"
+    "main.css": "/quiz-spokiy/static/css/main.e6c13ad2.css",
+    "main.js": "/quiz-spokiy/static/js/main.ffdfe0af.js",
+    "static/js/453.ad6eb26e.chunk.js": "/quiz-spokiy/static/js/453.ad6eb26e.chunk.js",
+    "index.html": "/quiz-spokiy/index.html",
+    "main.e6c13ad2.css.map": "/quiz-spokiy/static/css/main.e6c13ad2.css.map",
+    "main.ffdfe0af.js.map": "/quiz-spokiy/static/js/main.ffdfe0af.js.map",
+    "453.ad6eb26e.chunk.js.map": "/quiz-spokiy/static/js/453.ad6eb26e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.74792c0b.js"
+    "static/js/main.ffdfe0af.js"
   ]
 }
